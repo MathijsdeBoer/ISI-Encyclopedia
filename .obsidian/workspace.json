@@ -20,20 +20,6 @@
             }
           }
         ]
-      },
-      {
-        "id": "bd4e824e952f3a74",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "23650a9dd195c2f6",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -142,13 +128,21 @@
                 "file": "Welcome.md"
               }
             }
+          },
+          {
+            "id": "05ea022511d128fb",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -157,7 +151,8 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "6c39f936d453c186",
