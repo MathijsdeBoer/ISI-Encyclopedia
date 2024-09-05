@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Topics/SSH.md",
-                "mode": "preview",
+                "file": "Topics/TMUX.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Topics/SSH.md",
+                "file": "Topics/TMUX.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Topics/SSH.md",
+                "file": "Topics/TMUX.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Topics/SSH.md"
+                "file": "Topics/TMUX.md"
               }
             }
           },
@@ -156,10 +156,13 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "6c39f936d453c186",
+  "active": "05ea022511d128fb",
   "lastOpenFiles": [
-    "Readme.md",
+    "().md",
+    "Topics/TMUX.md",
+    "Topics/CLI.md",
     "Topics/SSH.md",
+    "Readme.md",
     "Topics"
   ]
 }
