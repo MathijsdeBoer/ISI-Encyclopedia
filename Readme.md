@@ -1,1 +1,1 @@
-This repository aims to provide an overview of concepts and topics that can help you start working with the resources provided in the ISI faster.
+This repository aims to provide an overview of concepts and topics that can help you start working with the resources provided in the Image Sciences Institute (ISI) faster.

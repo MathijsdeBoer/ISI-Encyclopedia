@@ -1,1 +1,0 @@
-The Command Line Interface (CLI) is a general term for programs that let you interact with your operating system through a text interface.
