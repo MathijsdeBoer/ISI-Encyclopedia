@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Topics/Programming/Python/Virtual Environments.md",
+                "file": "Topics/Programming/Python/packages/PyTorch/Installation.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Topics/Programming/Python/Virtual Environments.md",
+                "file": "Topics/Programming/Python/packages/PyTorch/Installation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Topics/Programming/Python/Virtual Environments.md",
+                "file": "Topics/Programming/Python/packages/PyTorch/Installation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Topics/Programming/Python/Virtual Environments.md"
+                "file": "Topics/Programming/Python/packages/PyTorch/Installation.md"
               }
             }
           },
@@ -156,21 +156,21 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "05ea022511d128fb",
+  "active": "6c39f936d453c186",
   "lastOpenFiles": [
+    "Readme.md",
+    "Topics/Programming/Python/Virtual Environments.md",
     "Topics/Programming/Python/Type Hints.md",
     "Topics/Programming/Python/Project Requirements.md",
     "Topics/Programming/Python/packages/PyTorch/Installation.md",
     "Topics/Programming/Python/packages/PyTorch",
     "Topics/Programming/Python/packages",
-    "Topics/Programming/Python/Virtual Environments.md",
     "Topics/OS/CLI.md",
     "Topics/OS/TMUX.md",
     "Topics/OS/SSH.md",
     "Topics/Programming/Python",
     "Topics/Programming",
     "Topics/OS",
-    "Readme.md",
     "().md",
     "Topics"
   ]
