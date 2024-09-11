@@ -9,7 +9,6 @@ tags:
 aliases:
   - Secure Shell
 ---
-
 Secure Shell (SSH) is an encrypted network communication protocol that allows users to log into other computers and remotely execute commands.
 
 A typical command to use `ssh` to log into a remote computer looks like this:
@@ -24,7 +23,6 @@ For example:
 The other computer will now ask you to provide your password:
 `user@computer's password: _`
 Simply type in the password that was provided for you, and hit enter. Don't worry if you don't see anything change when typing. For security reasons, there will be no visual feedback when typing the password.
-
 ## First time connecting
 When logging into a remote computer for the first time, `ssh` will ask you if you are sure if you want to continue connecting:
 
