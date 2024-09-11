@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Topics/Programming/Python/packages/PyTorch/Installation.md",
-                "mode": "source",
+                "file": "Topics/Version Control/Git.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Topics/Programming/Python/packages/PyTorch/Installation.md",
+                "file": "Topics/Version Control/Git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Topics/Programming/Python/packages/PyTorch/Installation.md",
+                "file": "Topics/Version Control/Git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Topics/Programming/Python/packages/PyTorch/Installation.md"
+                "file": "Topics/Version Control/Git.md"
               }
             }
           },
@@ -156,13 +156,18 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "6c39f936d453c186",
+  "active": "05ea022511d128fb",
   "lastOpenFiles": [
+    "Pasted image 20240911120232.png",
+    "Topics/Version Control/Git.md",
+    "Topics/Version Control/Images/Git_operations.svg-1.png",
+    "Topics/Version Control/Images",
     "Readme.md",
+    "Topics/Version Control",
+    "Topics/Programming/Python/packages/PyTorch/Installation.md",
     "Topics/Programming/Python/Virtual Environments.md",
     "Topics/Programming/Python/Type Hints.md",
     "Topics/Programming/Python/Project Requirements.md",
-    "Topics/Programming/Python/packages/PyTorch/Installation.md",
     "Topics/Programming/Python/packages/PyTorch",
     "Topics/Programming/Python/packages",
     "Topics/OS/CLI.md",
