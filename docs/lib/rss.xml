@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[ISI Encyclopedia]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>ISI Encyclopedia</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 11 Sep 2024 13:43:36 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 11 Sep 2024 13:43:35 GMT</pubDate><copyright><![CDATA[The Image Sciences Institute]]></copyright><ttl>60</ttl><dc:creator>The Image Sciences Institute</dc:creator><item><title><![CDATA[CLI]]></title><description><![CDATA[ 
+ <br>The Command Line Interface (CLI) is a general term for programs that let you interact with your operating system through a text interface. These emerged in the 1960s as a means to more conveniently interact with the large computer systems of the time, superseding the punch cards. The modern form of interaction with a computer is mostly done through the Graphical User Interface (GUI).<br>Generally, we can split a CLI into two main types:<br>
+<br>Operating System (OS) CLI
+<br>Application CLI<br>
+The OS CLI is commonly pre-packaged with the OS and lets the user interact with system features or applications, whereas an Application CLI is more restricted to the relevant application.
+<br>Which OS CLI you use is dependent on the OS of the machine you're interacting with, and personal preference. <br>For Windows, think of CMD or PowerShell. Whereas CMD has been around since 1987, PowerShell is much newer with a first release in 2006. For new users and projects, Microsoft has decided in 2016 that PowerShell shall be the new default terminal application in Windows (<a data-tooltip-position="top" aria-label="https://devblogs.microsoft.com/commandline/rumors-of-cmds-death-have-been-greatly-exaggerated/" rel="noopener" class="external-link" href="https://devblogs.microsoft.com/commandline/rumors-of-cmds-death-have-been-greatly-exaggerated/" target="_blank">resulting in a small panic that CMD was getting removed</a>). PowerShell's functionality is much more in line with other terminals, and it contains a few more modern nice-to-haves that cmd does not have.<br>Linux and macOS systems share a lot of underlying architecture, so their CLI shells are fairly interchangeable. What you'll often find on these is either sh or bash, whereas macOS has switched to zsh since the Catalina update. There are more shells that you can install to your own liking, such as fish. <br>Excluding CMD, all presented shells share a similar basic usage:<br># Change directory to
+# - .../...
+cd .../...
+
+# - one directory up
+cd ..
+
+# - root (linux/macOS)
+cd /
+
+# - drive root (Windows)
+cd c:/
+
+# List files and directories in:
+# - current directory
+ls
+
+# - the given directory
+ls .../...
+
+# - the current directory, including hidden
+ls -a
+
+# Run program in current directory
+# - linux/macOS
+./program
+
+# - Windows (.exe at the end optional)
+program[.exe]
+Copy<br>Whereas small differences here and there exist, and given that there are a lot more functions you can call, it should be clear that there aren't many functional differences (anymore) between the terminals.]]></description><link>Topics\OS\CLI.html</link><guid isPermaLink="false">Topics/OS/CLI.md</guid><dc:creator><![CDATA[The Image Sciences Institute]]></dc:creator><pubDate>Tue, 10 Sep 2024 13:17:07 GMT</pubDate></item><item><title><![CDATA[SSH]]></title><description><![CDATA[ 
+ <br>Secure Shell (SSH) is an encrypted network communication protocol that allows users to log into other computers and remotely execute commands.<br>A typical command to use ssh to log into a remote computer looks like this:<br>
+&gt; ssh user@computer<br>
+Where user is your username, and computer is the name or IP address of the remote computer.<br>For example:<br>
+&gt; ssh bob@gpuserver<br>
+&gt; ssh alice@127.0.0.1<br>
+&gt; ssh charlie@compute.servers.company.com<br>The other computer will now ask you to provide your password:<br>
+user@computer's password: _<br>
+Simply type in the password that was provided for you, and hit enter. Don't worry if you don't see anything change when typing. For security reasons, there will be no visual feedback when typing the password.<br><br>When logging into a remote computer for the first time, ssh will ask you if you are sure if you want to continue connecting:<br>The authenticity of host 'computer (123.456.78.90)' can't be established.
+ECDSA key fingerprint is SHA256:C90NRsN45D9BhSUonjZbKY/nxkPMTXEuTRsC1yUXcu8.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? _
+Copy<br>This is simply ssh telling you that you've never connected to this particular server before. This is a security feature. If you suddenly get this message again from connecting to a server that you've used often before, you know that something has changed on the other end. Either through a simple reconfiguring of the other computer, or someone has started spoofing the server's identity.<br>To accept the request, simply type yes and hit enter.]]></description><link>Topics\OS\SSH.html</link><guid isPermaLink="false">Topics/OS/SSH.md</guid><dc:creator><![CDATA[The Image Sciences Institute]]></dc:creator><pubDate>Thu, 05 Sep 2024 13:28:30 GMT</pubDate></item><item><title><![CDATA[TMUX]]></title><description><![CDATA[ 
+ <br>tmux is a terminal multiplexer for Unix-like operating systems. Effectively, it turns your <a data-href="CLI" href="Topics\OS\CLI.html" class="internal-link" target="_self" rel="noopener">CLI</a> into a tiled set of smaller CLI sessions. An important feature of tmux is that it detaches the running processes from the controlling terminals, which allows for remote sessions to keep running after a disconnect.<br>tmux maintains a hierarchy of concepts. At the top we have the session, which houses windows, and each window is split up in panes.<br>Session
+|-- Window
+	|- Pane
+|-- Window
+	|-- Pane
+	|-- Pane
+	...	
+Copy<br>A useful resource is the <a data-tooltip-position="top" aria-label="https://tmuxcheatsheet.com/" rel="noopener" class="external-link" href="https://tmuxcheatsheet.com/" target="_blank">TMUX Cheat Sheet website</a>, which lists a much more comprehensive set of controls than what we cover in this document.<br><br>Sessions are the overarching concept within tmux. They manage active windows in neatly organized groupings.<br>Starting a tmux session can be as easy as simply typing<br>
+&gt; tmux<br>
+in a terminal. This will create a new session, and open a window for you. However, if you've already got an earlier session running, you can reconnect to it with<br>
+&gt; tmux attach<br>
+If you've got multiple sessions running, you can list them with<br>
+&gt; tmux ls<br>
+and connect to a specific one with<br>
+&gt; tmux attach -t [session]<br>Closing a session can be as easy as typing<br>
+&gt; exit<br>
+in the session's last existing window. If you have multiple windows open, it'll close the window, but keep the remaining one(s). Only when you type the exit command in the last one will it also close the session. If you want to kill a session without entering it, you can use<br>
+&gt; tmux kill-session -t [session]<br><br>While there are a lot of features in tmux, the basic things to remember are actually quite simple. When using the keyboard in a tmux session, all keystrokes are sent to the terminal that is currently active. If you want to interact with the tmux session itself, you'll need to input the escape sequence. By default, this is Ctrl + B. After pressing this combination, you might see nothing change, that is because tmux is now awaiting your next input. Some example inputs:<br>
+<br>Ctrl + B, D<br>
+Detach from the session
+<br>Ctrl + B, [↑ ↓ → ←]<br>
+Change active pane. If you don't select another direction in a short amount of time the currently selected pane will become active
+<br>Ctrl + B, [<br>
+Allows you to scroll through the terminal's history with ↑ and  ↓. Hold Ctrl while scrolling for moving the entire pane one line at a time, and hold Alt to jump several. Depending on the installed version of tmux, you can also scroll with the mouse wheel.
+<br>Ctrl + B, Ctrl + [↑ ↓ → ←]<br>
+Resize the currently active pane in the direction you tap. Keep holding Ctrl while tapping a direction to make multiple adjustments. Releasing Ctrl will stop resizing again.
+]]></description><link>Topics\OS\TMUX.html</link><guid isPermaLink="false">Topics/OS/TMUX.md</guid><dc:creator><![CDATA[The Image Sciences Institute]]></dc:creator><pubDate>Mon, 09 Sep 2024 09:37:43 GMT</pubDate></item><item><title><![CDATA[Installation]]></title><description><![CDATA[ 
+ <br>Installing PyTorch can be as simple as<br>pip install torch
+Copy<br>Caution
+On a Linux system this will automatically get a CUDA enabled installation of torch if possible, but on Windows this will always install the CPU only version. To install the CUDA version of torch on Windows, see the <a data-tooltip-position="top" aria-label="https://pytorch.org/get-started/locally/" rel="noopener" class="external-link" href="https://pytorch.org/get-started/locally/" target="_blank">getting started page</a> and select the CUDA version, or the one nearest but not greater than, that you have installed.<br>
+For example, with CUDA 12.4, the command will be
+pip install torch --index-url https://download.pytorch.org/whl/cu124
+Copy
+If you already accidentally installed the CPU version of torch, add -U or --upgrade to your pip install command:
+pip install -U torch --index-url https://download.pytorch.org/whl/cu124
+Copy
+]]></description><link>Topics\Programming\Python\packages\PyTorch\Installation.html</link><guid isPermaLink="false">Topics/Programming/Python/packages/PyTorch/Installation.md</guid><dc:creator><![CDATA[The Image Sciences Institute]]></dc:creator><pubDate>Tue, 10 Sep 2024 15:37:37 GMT</pubDate></item><item><title><![CDATA[Project Requirements]]></title><description><![CDATA[ 
+ <br>Historically, Python project requirements were frequently defined in the venerable requirements.txt. This is a simple text file that listed each installed package with version on each line. Any users of your project could install (hopefully) the same exact packages by running<br>pip install -r requirements.txt
+Copy<br>This method was (and is) quite popular because it was fairly low effort to create a requirements.txt file with the following:<br>pip freeze &gt; requirements.txt
+Copy<br>An example of requirements.txt could look something like this:<br>numpy==1.21.1
+torch==1.3.0
+scipy==1.0
+Copy<br>Problems arise when any of the package versions are pulled from PyPi, or when the Python version you're trying to use is not supported by the packages. This has a larger chance of happening when the project you're trying to use is on the older side.<br><br>Fairly recently, Python Enhancement Proposals (PEP) <a data-tooltip-position="top" aria-label="https://peps.python.org/pep-0518/" rel="noopener" class="external-link" href="https://peps.python.org/pep-0518/" target="_blank">518</a> and <a data-tooltip-position="top" aria-label="https://peps.python.org/pep-0621/" rel="noopener" class="external-link" href="https://peps.python.org/pep-0621/" target="_blank">621</a> have introduced and stabilized the pyproject.toml format as the new preferred method to define your project's metadata and dependencies. An added benefit that the specification has is that it is expected to serve as the universal specification for a wide range of build methods to use when managing the project. This should cut down on each distinct package manager having their own special format that is not interchangeable.<br>The pyproject.toml file lives at the root of your project, the same place where you'd generally find the requirements.txt, and specifies some information that build systems need to properly install your project dependencies. As specified in PEP 621, the following is a minimal example of a pyproject.toml:<br>[project]
+name = "myproject"
+Copy<br>That's it! All the specification really requires is the name of your project. But we do probably want to specify a few more things:<br>[project]
+name = "myproject"
+version = "0.1.0"
+requires-python = "&gt;=3.12"
+authors = [
+	{name = "Lois Lane", email = "l.lane@dailyplanet.com"}
+	{name = "Clark Kent"}
+]
+maintainers = [
+	{name = "Lex Luthor", email = "bossman@lexcorp.com"}
+]
+dependencies = [
+	"matplotlib ~= 3.9.2"
+	"numpy ~= 2.1.1",
+	"requests ~= 2.23.3",
+]
+
+[project.optional-dependencies]
+test = [
+	"pytest",
+]
+
+[build-system]  
+requires = ["setuptools"]  
+build-backend = "setuptools.build_meta"
+Copy<br><br>The above pyproject.toml has a few more things than the minimal example, we'll go through them<br><br>The version field in the file specifies the semantic version of your project. This string must follow pep <a data-tooltip-position="top" aria-label="https://peps.python.org/pep-0440/" rel="noopener" class="external-link" href="https://peps.python.org/pep-0440/" target="_blank">440</a>, which reads like it is a lot scarier than it really is. The basic form of semantic versioning is that the first number is the major version, which would specify that a major change has occurred that most likely is not backwards compatible with the previous major version. The second number tends to be seen as the minor version. A minor update can introduce a new feature and change some fairly small things that may not always be backwards compatible. The third number tends to be a bugfix update. These tend to not be breaking changes (unless you were somehow relying on the bug!).<br>Info
+Semantic versioning does not actually have any rules to it, but the M.m.b format is the most common one. Other formats include a date-based versioning system, such as 2024.9. Read the <a data-tooltip-position="top" aria-label="https://peps.python.org/pep-0440/" rel="noopener" class="external-link" href="https://peps.python.org/pep-0440/" target="_blank">PEP 440 page</a> for more a in-depth explanation.
+<br><br>As the names of suggest, these specify who initially made the project, and if someone has now taken over development, who maintains the project. The entries can contain a name, and an email address, and must be specified on the same line per person. Note that the exact definition of Author/Maintainer is up to the project owners.<br><br>The requires-python field specifies which versions of Python are valid for your project. If, for example, you want to use <a data-href="Type Hints" href="Topics\Programming\Python\Type Hints.html" class="internal-link" target="_self" rel="noopener">Type Hints</a>, you'd need at least version 3.5, so you'd write<br>requires-python = "&gt;=3.5"
+Copy<br>If one of your dependencies doesn't work with Python 3.9 and above, you can change the line to<br>requires-python = "&gt;=3.5, &lt;3.9"
+Copy<br>If someone tries to install your project while they're using a Python version that is not supported, the installer will error out.<br><br>These are the real meat of your requirements specification. The basic dependencies entry is defined in the PEP as being a list of strings, following PEP <a data-tooltip-position="top" aria-label="https://peps.python.org/pep-0508/" rel="noopener" class="external-link" href="https://peps.python.org/pep-0508/" target="_blank">508</a> and <a data-tooltip-position="top" aria-label="https://peps.python.org/pep-0440/" rel="noopener" class="external-link" href="https://peps.python.org/pep-0440/" target="_blank">440</a>. PEP 508 describes how you should format a string to serve as a correct package name and version specifier, and 440 additionally describes <a data-tooltip-position="top" aria-label="https://packaging.python.org/en/latest/specifications/version-specifiers/#version-matching" rel="noopener" class="external-link" href="https://packaging.python.org/en/latest/specifications/version-specifiers/#version-matching" target="_blank">how you may use comparators</a> for version range selection. In short, there are a few things you can do:<br>dependencies = [
+	"no-version",
+	"minimum-version &gt;= 1.0",
+	"between-versions &gt;= 1.0, &lt;2.0",
+	"only-this-version == 1.0",
+	"except-this-version &gt;1.0, != 1.1",
+	"compatible-version ~= 1.0.0"
+]
+Copy<br>Note
+The compatible-version specifies it's version with the ~= operator. This indicates that it will match with any version &gt;= 1.0.0, &lt;1.1.*. The granularity of compatibility is determined by how many steps into the version scheme you define it. If we had written<br>
+compatible-version ~= 1.0<br>
+We'd have matched with any version &gt;=1.0, &lt;2.0. See the <a data-tooltip-position="top" aria-label="https://packaging.python.org/en/latest/specifications/version-specifiers/#compatible-release" rel="noopener" class="external-link" href="https://packaging.python.org/en/latest/specifications/version-specifiers/#compatible-release" target="_blank">Compatible Release section</a>
+<br>Optional-dependencies work similar, but are split off from the main [project] table to allow for the following syntax:<br>[project.optonal-dependencies]
+all = [
+	"myproject[dev,jupyter]"
+]
+dev = [
+	"black",
+	"isort",
+	"pytest"
+]
+jupyter = [
+	"jupyterlab"
+]
+Copy<br>where each field creates a new extra that you can optionally install. For example, if the user wants to use jupyter functionality in your project, they could run<br>pip install myproject[jupyter]
+Copy<br>to select the required optional dependencies. Finally, you can also specify a combination of your extras by using the name of your project, together with the extras you want to bundle together.<br><br>Last but not least, the build-system table specifies which build system you want to use for your project. The most common one that is used for pure python systems is setuptools. To specify this, we set requires = ["setuptools"], but if your project has any other requirements that you may need during a pip install, you can add them to this list. These packages will only be installed during the build, so any package that you also need during runtime should also be specified under dependencies.<br>The build-backend field specifies which of the packages in reduires we should use, and which command from that package we should build with.<br><br>If you have a need to install your project, for example as a package for another project, but have not published it to PyPi, you can simply install it using<br>pip install /path/to/project
+Copy<br>where the path to the project should be the directory where your pyproject.toml file is located.<br>An option you can pass as well is the editable flag, -e or --editable like so:<br>pip install -e /path/to/project
+Copy<br>which lets you edit the files in your project to quickly fix bugs or add features as needed without having to reinstall the entire package.]]></description><link>Topics\Programming\Python\Project Requirements.html</link><guid isPermaLink="false">Topics/Programming/Python/Project Requirements.md</guid><dc:creator><![CDATA[The Image Sciences Institute]]></dc:creator><pubDate>Tue, 10 Sep 2024 15:30:06 GMT</pubDate></item><item><title><![CDATA[Type Hints]]></title><description><![CDATA[ 
+ <br>Python Enhancement Proposal (PEP) <a data-tooltip-position="top" aria-label="https://peps.python.org/pep-0484/" rel="noopener" class="external-link" href="https://peps.python.org/pep-0484/" target="_blank">484</a> introduced the concept of type hints to Python v3.5. These extra bits of text in your code let you, and a static analyzer, know what you intend a certain value or argument to be. Take for example the function foo(a, b). It's clear that it takes 2 arguments, a and b, but what are these values supposed to be? Does the function return anything? With type hinting we can annotate foo() to inform the user what it wants.<br>def foo(a, b):
+	return a + b
+Copy<br>turns into<br>def foo(a: int, b: int) -&gt; int:
+	return a + b
+Copy<br>A function that doesn't return anything would be<br>def bar() -&gt; None:
+	print("Type hints are the only type of hints men get")
+Copy<br>This shows that with only a little bit of extra typing, you can improve the usability and readability of your code immensely! It's suggested you keep the habit of including type hints as you create new classes and functions, just so you don't have to go back later and include them post-hoc.<br>Caution
+Type hints are just that, hints. It will not prevent you from putting a different datatype in foo() anyway. The user (usually you!) should take these as a "buyer beware" and accept any unexpected behavior or crashing as a result of overriding the type hints. Conversely, weird behavior and unexpected crashes are potentially the result of you ignoring a type hint.
+<br><br>What if your function supports multiple types for a given input? In the following definition of foo() we add a to itself. Many datatypes, such as numerical ones, support this operation.<br>def foo(a):
+	return a + a
+Copy<br>There's some options you could use, depending on your needs and expectations. For example, if you know you only want to use a limited set of datatypes here, you can use the following:<br># All versions &gt;=3.5
+from typing import Union
+
+def foo(a: Union[int, float]) -&gt; Union[int, float]:
+	return a + a
+
+# All versions &gt;= 3.10
+def foo(a: int | float) -&gt; int | float:
+	return a + a
+
+# All versions &gt;= 3.12
+def foo[T](a: T) -&gt; T:
+	return a + a
+
+# or 
+from typing import TypeVar
+
+T = TypeVar('T')
+
+def foo(a: T) -&gt; T:
+	return a + a
+Copy<br>The above code block shows that every few versions of Python a new way of declaring type hints are introduced, each adding a little more power, or simply increasing some readability. It is not unlikely that future versions of Python will start introducing some more "syntactic sugar" to the typing system, so you should check out the current state of them every once in a while!]]></description><link>Topics\Programming\Python\Type Hints.html</link><guid isPermaLink="false">Topics/Programming/Python/Type Hints.md</guid><dc:creator><![CDATA[The Image Sciences Institute]]></dc:creator><pubDate>Tue, 10 Sep 2024 12:42:13 GMT</pubDate></item><item><title><![CDATA[Virtual Environments]]></title><description><![CDATA[ 
+ <br>Virtual environments are highly suggested way to compartmentalize your Python projects from each other. Effectively a virtual environment is a distinct copy of the Python runtime that you can install your project's requirements to without affecting the system-wide Python or other projects you might have.<br>Take, for example, two projects you might have:<br>Project Foo
+Requirements:
+	numpy~=1.20.1
+	torch~=1.3.0
+
+Project Bar
+Requirements:
+	numpy~=2.1.0
+	torch~=2.4.0
+Copy<br>Note how both projects have different version requirements for numpy and torch. While the given packages are quite good at having solid <a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/Backward_compatibility" rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/Backward_compatibility" target="_blank">backward compatibility</a>, there will inevitably be some changes between the versions that might not be compatible with the given projects' use of the packages. Simply running pip install -r requirements.txt for both projects will inevitably break either one (or both!) of the projects. <br>Python, <a data-tooltip-position="top" aria-label="https://peps.python.org/pep-0405/" rel="noopener" class="external-link" href="https://peps.python.org/pep-0405/" target="_blank">since v3.3</a>, is commonly packaged with the venv package. As the name might suggest, this package deals with creating virtual environments. It's use is quite simple, though not without some things to keep in mind. In it's most basic form, you can run<br>python -m venv .venv
+Copy<br>to create a new virtual environment in the directory .venv of the directory where your shell currently is active. You're not yet using the new virtual environment though! First, you have to activate the new environment in your <a data-tooltip-position="top" aria-label="CLI" data-href="CLI" href="Topics\OS\CLI.html" class="internal-link" target="_self" rel="noopener">shell</a> with<br># Windows CMD
+cd .venv/Scripts
+activate
+cd ../..
+
+# Windows Powershell
+./.venv/Scripts/activate
+
+# MacOS Zsh and Linux Sh/Bash
+source .venv/bin/activate
+Copy<br>When successful, you should see something like (.venv) in front of your shell input:<br># Linux
+(.venv) ~$ 
+
+# Windows Powershell
+(.venv) PS C:\
+Copy<br>Now you're ready to start installing your project's requirements!<br><br>While venv is bundled with Python, other external solutions exist. One popular one is <a data-tooltip-position="top" aria-label="https://github.com/conda/conda" rel="noopener" class="external-link" href="https://github.com/conda/conda" target="_blank">Conda</a>, on which <a data-tooltip-position="top" aria-label="https://www.anaconda.com/" rel="noopener" class="external-link" href="https://www.anaconda.com/" target="_blank">Anaconda</a> is built. One benefit of Conda is that it also provides pre-built binaries for packages and libraries that are commonly used in scientific settings. As a whole, it serves the same function as pip and venv in one package, with the drawback that it tends to be quite heavyweight for anything but the most intricate projects. Furthermore, at time of writing, it doesn't play well with Python's <a data-tooltip-position="top" aria-label="Project Requirements" data-href="Project Requirements" href="Topics\Programming\Python\Project Requirements.html" class="internal-link" target="_self" rel="noopener">recently introduced method</a> of declaring project requirements.]]></description><link>Topics\Programming\Python\Virtual Environments.html</link><guid isPermaLink="false">Topics/Programming/Python/Virtual Environments.md</guid><dc:creator><![CDATA[The Image Sciences Institute]]></dc:creator><pubDate>Tue, 10 Sep 2024 13:45:44 GMT</pubDate></item><item><title><![CDATA[Git]]></title><description><![CDATA[ 
+ <br>Git is a distributed version control system that was originally designed by Linus Torvalds (of Linux fame) back in 2005. As Linux was using another source control management, which revoked it's license for the Linux project, and because there were many developers all across the world making small changes across the project, the Linux developers needed a solution that would cover all their requirements.<br>Info
+Git was named, just like Linux, after it's creator! Linus Torvalds stated that he is "an egotistical bastard, and [he] name[s] all [his] projects after [him]self".
+<br>The concepts behind git are actually pretty straightforward. Every user has their own copy of the git repository, including the change history. This allows for offline work without interruptions. Commonly, one location is assigned as the central repository to and from which the developers push and pull the changes. You probably have heard of providers such as <a data-tooltip-position="top" aria-label="https://github.com/" rel="noopener" class="external-link" href="https://github.com/" target="_blank">GitHub</a> and <a data-tooltip-position="top" aria-label="https://about.gitlab.com/" rel="noopener" class="external-link" href="https://about.gitlab.com/" target="_blank">GitLab</a>, which offer solutions for their users to serve their repositories.<br>Info
+While the common method is to assign one repository as the main canon, you are able to chain online copies together. For example, the <a data-tooltip-position="top" aria-label="https://github.com/torvalds/linux" rel="noopener" class="external-link" href="https://github.com/torvalds/linux" target="_blank">Linux repository on GitHub</a> is actually a mirror of the actual Linux repository!
+<br><br>For the following examples, we'll work with the toy project called cool-server. The main product of a startup serving cat pictures as a software as a service subscription model. This document is meant as a way to get you familiar with the basic terms and concepts, if you want more in-depth explanations, you can consult the excellent official <a data-tooltip-position="top" aria-label="https://git-scm.com/book/en/v2" rel="noopener" class="external-link" href="https://git-scm.com/book/en/v2" target="_blank">Git Book</a>.<br><br>Getting a repository started is as easy as opening your favorite <a data-tooltip-position="top" aria-label="CLI" data-href="CLI" href="Topics\OS\CLI.html" class="internal-link" target="_self" rel="noopener">terminal</a> or git GUI and typing<br>git init -b main
+Copy<br>This will start a new git repository in your current directory with a branch called main. This branch will be used, as the name suggests, the most important branch. It is worth noting that there is nothing in the git code that treats this branch any different from other branches. The only guard rails here are your own adherence to best practices.<br>Info
+Historically, the default git branch has the name master, for "master copy". Though in 2020 GitHub, and a little later GitLab have followed the advice from advocacy groups to change their defaults to main, given the connotation with "masters" during the slavery era. This has caused (and still is) a little controversy across developers worldwide, given that the term had been used outside of this context for many years.
+The current default branch name in git is still master, when not specified, however. You can change your defaults for new repositories with
+git config --global init.defaultBranch main
+Copy
+<br>If you're joining a team, or want to get someone else's code on your machine you probably don't need to initialize a new repository because one already exists. Cloning a repository as is similarly simple as initializing a new one.<br>git clone &lt;url&gt;
+Copy<br>Which will clone the git repository found at url to a directory with the same name as the git repository in the current directory. Commonly, the URL of a git repository will end in .git. For example: https://github.com/torvalds/linux.git, https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git or https://gitlab.com/linux-kernel/linux.git<br><br>If you first initialized your repository with the git init command, there is no remote repository set up. The remote repository is a copy of your repository that you want to interact with. Most commonly, this is the online repository that you'll find on GitHub, GitLab or a private server, and where other developers will also push and pull the changes to and from.<br>If you used git clone, the remote server should have automatically been set to the server from where your URL originated from. To see if you have a remote set up, run<br>git remote -v
+Copy<br>and it should list the remotes and their URLs that have been configured for your repository.<br>Adding a remote is done with<br>git remote add &lt;remote-name&gt; &lt;url&gt;
+Copy<br>remote-name functions as the name for future commands we might want to run with that specific remote. This does not yet set this remote as the default remote for your future commands, such as push and pull. If you don't want to specify the remote you're trying to interact with every time, you can set it as the default with<br>git branch &lt;branch&gt; -u &lt;remote-name&gt;/&lt;remote-branch&gt;
+Copy<br>Alternatively, if you've got a commit ready to push, you can also run it as<br>git push -u &lt;remote-name&gt;/&lt;remote-branch&gt;
+Copy<br>Caution
+Note that the default remote setting can be different for each branch you might have locally, and that the remote branch name may differ from your local branch name.
+<br><br>When you've got your repository set up, you can start making changes! Simply get to work on your cool-server project and when you're ready to save your changes you should add the files that you want to track. If that's all changes, you can run<br>git add -A
+Copy<br>to track all changed/added files. If it's only specific ones, you can instead run<br>git add ./index.html ./readme.md ./license.md
+Copy<br>Which will only include the changes to the specified files. The files that you've added are called "staged" changes. Unstaged changes will not be included in the commits to your repository.<br>When your changes are all staged, you can commit them to your repository. In other words, you tell git that the current changes should be saved as another time point in your branch's history. Committing is done with<br>git commit -m "Added more cats"
+Copy<br>That's it! Now you've saved the changes to your repository, and you can freely make more changes.<br><br>Seeing as git is a decentralized version control system, the changes you made and committed to your local copy are not immediately represented on your remote. That is, if you made and committed changes, your collaborators can't yet access them until you push your changes to the remote. This is very simple<br>git push
+Copy<br>When the push is successful, another user can then<br>git pull
+Copy<br>in their local repository to download the changes that you've made! Of course, the inverse is also true, when another user has pushed their commits to the remote, then you can pull them to your own repository.<br>If you want to see if there are any commits you can pull from the remote, but not actually pull them, you can run<br>git fetch
+Copy<br>to update your remote tracking information.<br><br>Another important feature of git is the ability to branch off different versions of the repository at arbitrary points in the history. Take the cool-server project. We made this project to serve cat pictures to interested (and paying) users, but someone on our development team is secretly also a fan of dogs. What they want to do is experiment with the code to see if it can be updated to also serve these pictures to users, but they don't want to hinder the main development path of our project. This is where a branch can be the solution.<br>Dog developer may branch off the code into it's own copy that is independent of the main development branch and change the code as desired:<br>	dev
+	 |
+	 |   &lt;-- git branch dog
+	 |\
+	 | \
+	 |  \
+	dev dog
+Copy<br>Now any changes to the dog branch do not impact the dev branch and dog developer can experiment to their heart's desire without risking breaking the dev branch code!<br>Now that dog developer has successfully added the dog picture functionality, they can merge the changes with dev:<br>	dev dog
+	 |   |    &lt;- git checkout dev
+	 |  /     &lt;- git merge dog
+	 | /
+	 |/
+	 |
+	 dev
+Copy<br>And now dev also contains the new functionality that was introduced in dog!<br>Caution
+The above example is just a toy example. Real world scenarios would most likely also include changes to dev in the meantime. If those changes also affect the same files that are changed in dog, you have the risk of finding yourself with a merge conflict.
+<br>Caution
+As with commits, the branches will not show up on your remote server until you git push them.
+]]></description><link>Topics\Version Control\Git.html</link><guid isPermaLink="false">Topics/Version Control/Git.md</guid><dc:creator><![CDATA[The Image Sciences Institute]]></dc:creator><pubDate>Wed, 11 Sep 2024 13:04:05 GMT</pubDate></item><item><title><![CDATA[index]]></title><description><![CDATA[ 
+ <br>This repository aims to provide an overview of concepts and topics that can help you start working with the resources provided in the Image Sciences Institute (ISI) faster. The files have been written in <a data-tooltip-position="top" aria-label="https://obsidian.md/" rel="noopener" class="external-link" href="https://obsidian.md/" target="_blank">Obsidian.md</a>, which is a note taking app that allows for crosslinking between your notes. A benefit of this application is that its files are in the universal <a data-tooltip-position="top" aria-label="https://daringfireball.net/projects/markdown/" rel="noopener" class="external-link" href="https://daringfireball.net/projects/markdown/" target="_blank">Markdown</a> (.md) format, which is supported by many rendering and parsing engines across the internet. However, crosslinking may not work properly, so you might see some terms with<br>[[brackets]]
+Copy<br>around them if you read the raw .md files on GitHub, or any other place you might find this.<br>Future endeavors include an HTML export of the notes on a regular basis, so that these crosslinks are properly handled.<br><br>To edit the files you can simply open them in your text editor of choice. However, it is recommended that you install Obsidian if you want to do more extensive editing.]]></description><link>index.html</link><guid isPermaLink="false">index.md</guid><dc:creator><![CDATA[The Image Sciences Institute]]></dc:creator><pubDate>Wed, 11 Sep 2024 08:16:34 GMT</pubDate></item></channel></rss>
