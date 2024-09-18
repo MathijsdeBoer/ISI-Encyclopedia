@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Topics/Version Control/Git.md",
-                "mode": "preview",
+                "file": "Topics/Programming/Python/Project Requirements.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Readme.md",
+                "file": "Topics/Programming/Python/Project Requirements.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Readme.md",
+                "file": "Topics/Programming/Python/Project Requirements.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Readme.md"
+                "file": "Topics/Programming/Python/Project Requirements.md"
               }
             }
           },
@@ -156,44 +156,7 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "floating": {
-    "id": "1c9462f63e43ccdf",
-    "type": "floating",
-    "children": [
-      {
-        "id": "ed066a0a8b851ea1",
-        "type": "window",
-        "children": [
-          {
-            "id": "af3cce4924ae1b73",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "afcf8486955c02b9",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Readme.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 510,
-        "y": 660,
-        "width": 900,
-        "height": 500,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "afcf8486955c02b9",
+  "active": "6c39f936d453c186",
   "lastOpenFiles": [
     "Topics/Version Control/Git.md",
     "Topics/Programming/Python/Virtual Environments.md",
